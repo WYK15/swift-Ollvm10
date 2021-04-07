@@ -1,5 +1,19 @@
 # goron https://github.com/amimo/goron
 
+# 编译llvm和clang步骤：
+
+```
+$cd 进入下载的llvm目录
+$mkdir ninja_build
+$cmake -S llvm -DLLVM_ENABLE_PROJECTS="clang" -B ninja_build -G Ninja -DCMAKE_BUILD_TYPE=Release -DLLVM_CREATE_XCODE_TOOLCHAIN=ON
+```
+
+#安装Xcode toolchain
+```
+cd build
+sudo make install-xcode-toolchain
+mv /usr/local/Toolchains  /Library/Developer/
+```
 # Apple's fork of llvm-project
 
 This is Apple's fork of llvm-project.  For more information on Apple's
